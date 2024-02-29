@@ -1,9 +1,4 @@
-[NOMBRE] llega a Tolawe [???]
+Al empezar el juego, a punto de llegar las vacaciones de verano kit está teniendo una conversación con sus padres sobre dónde van a disfrutarlas, todos los veranos solían ir a la playa, pero recientemente, Rose, la abuela de Kit, se ha enfermado y tienen que quedarse en el pueblo donde viven para poder cuidar de ella. Aunque a Kit le parecen malas noticias, Roy le propone apuntarse a los scouts durante el verano, recordando lo bien que él lo pasó a su edad. Además así podría pasar tiempo con Ave, su amiga de clase, que ya va a los scouts desdde hace varios años. Kit se muestra desilusionada, puesto que quería volver a ver a sus amigos de la playa, pero entiende que tienen que cuidar de su abuela.
 
-Se une a los scouts y le dicen que no hay coso de ponerse en el cuello de su talla asi que le dan uno pequeño que se lo tiene que poner en la oreja (No es que sea quirky) 
-
-[???]
-
-En algún momento un amigue se pierde en el bosque y tienes que adentrarte en el bosque para encontrarle
-
-
+El juego empieza en la escuela, siendo el último día de clase, la profesora decide dedicar la última clase para hablar de que planes tienen los alumnos para el verano, pregunta a kit sobre los suyos y kit explica, triste, como no va a poder pasar el verano en la playa como elle quería, pero aprovechará para apuntarse a los scouts. Ave está súper ilusionada y le dice que le puede presentar a todo el mundo y lo pasarán genial.
+Suena el timbre para que vayan al recreo, en el que Ave, Kit y el resto de compañeros jugarán al escondite en el recinto escolar, siendo kit quien tenga que buscar al resto.
