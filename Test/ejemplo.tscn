@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dogb8twghd1m2"]
+
+[ext_resource type="PackedScene" uid="uid://dmc52okbh8vtl" path="res://Player/player.tscn" id="1_ocxrg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_am5s3"]
+size = Vector3(5.98474, 0.461395, 5.85657)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0s1pn"]
+size = Vector3(6, 0.5, 6)
+
+[sub_resource type="Environment" id="Environment_xx3pc"]
+ambient_light_source = 2
+ambient_light_color = Color(0.729412, 0.729412, 0.729412, 1)
+
+[node name="Ejemplo" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585917, -0.00167489, 0.0740146)
+shape = SubResource("BoxShape3D_am5s3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_0s1pn")
+
+[node name="PlayerActor" parent="." node_paths=PackedStringArray("view") instance=ExtResource("1_ocxrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53505, 0)
+view = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.765427, -2.85144e-09, -0.643523, 0.042066, 0.997861, 0.0500347, 0.642146, -0.0653683, 0.76379, -4.02659, 2.69422, 4.85155)
+environment = SubResource("Environment_xx3pc")
+fov = 91.5729
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.765427, -2.28115e-08, -0.643523, 0.042066, 0.997861, 0.0500347, 0.642146, -0.0653683, 0.76379, -9.35084, 7.73788, 8.00161)
