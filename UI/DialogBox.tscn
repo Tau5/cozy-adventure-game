@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1c4kqyeey7q3"]
+
+[ext_resource type="Script" path="res://UI/DialogBox.gd" id="1_w3djr"]
+
+[sub_resource type="Gradient" id="Gradient_ou5a5"]
+colors = PackedColorArray(0, 0.4, 0.4, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rvqhb"]
+gradient = SubResource("Gradient_ou5a5")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_ox0g6"]
+colors = PackedColorArray(0.454902, 0, 0.541176, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nhsv8"]
+gradient = SubResource("Gradient_ox0g6")
+width = 1
+
+[node name="DialogBox" type="Control" groups=["UI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w3djr")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.145062
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Fondo" type="TextureRect" parent="Text"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -554.0
+offset_bottom = 0.000183105
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture1D_rvqhb")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00173611
+anchor_top = 0.00154321
+anchor_right = 0.292
+anchor_bottom = 0.136
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 0.615967
+offset_bottom = 5.87199
+metadata/_edit_use_anchors_ = true
+
+[node name="Fondo" type="TextureRect" parent="NameLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+texture = SubResource("GradientTexture1D_nhsv8")
