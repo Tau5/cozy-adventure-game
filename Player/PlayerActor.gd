@@ -3,7 +3,7 @@ extends CharacterBody3D
 signal coin_collected
 
 @export_subgroup("Components")
-@export var view: Node3D
+@export var view: Node3D = self
 
 @export_subgroup("Properties")
 @export var movement_speed = 250
@@ -136,5 +136,5 @@ func jump():
 	
 	#model.scale = Vector3(0.5, 1.5, 0.5)
 	
-	jump_single = false;
-	jump_double = true;
+	jump_single = false
+	jump_double = true
