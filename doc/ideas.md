@@ -8,3 +8,7 @@
 	+ Enconttrar bichos
 	+ Encontrar flores
 	+ Encontrar animales
+
+### Misc
+
+un personaje, de forma cariñosa, le dice a kit "hey toolkit" en inglés y puede que en español "hey kitkat" (es solo una idea para traducirlo y que tenga sentido)
