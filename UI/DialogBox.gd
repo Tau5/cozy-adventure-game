@@ -29,7 +29,7 @@ func _process(delta):
 			acum_time = 0
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") and playing:
 		# if finished drawing the text
 		if dialog_char_index > dialogs[curr_dialog_index].text.length() - 1:
 			next_dialog()
