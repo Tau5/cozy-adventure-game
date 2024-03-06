@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://kmjlvx26x1d2"]
+
+[ext_resource type="Script" path="res://Player/Camera3D.gd" id="1_c157h"]
+
+[node name="Camera3D" type="Camera3D"]
+rotation_edit_mode = 2
+top_level = true
+current = true
+script = ExtResource("1_c157h")
