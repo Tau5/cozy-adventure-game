@@ -1,8 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dogb8twghd1m2"]
+[gd_scene load_steps=7 format=3 uid="uid://dogb8twghd1m2"]
 
 [ext_resource type="PackedScene" uid="uid://dmc52okbh8vtl" path="res://Player/player.tscn" id="1_ocxrg"]
 [ext_resource type="PackedScene" uid="uid://cw74hyahlol7h" path="res://UI/UI.tscn" id="1_vwhho"]
 [ext_resource type="PackedScene" uid="uid://kmjlvx26x1d2" path="res://Player/Camera.tscn" id="3_sn115"]
+
+[sub_resource type="GDScript" id="GDScript_47wid"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_am5s3"]
 size = Vector3(5.98474, 0.461395, 5.85657)
@@ -11,6 +28,7 @@ size = Vector3(5.98474, 0.461395, 5.85657)
 size = Vector3(6, 0.5, 6)
 
 [node name="Ejemplo" type="Node3D"]
+script = SubResource("GDScript_47wid")
 
 [node name="UI" parent="." instance=ExtResource("1_vwhho")]
 
@@ -31,5 +49,5 @@ view = NodePath("../Camera")
 transform = Transform3D(0.765427, -2.28115e-08, -0.643523, 0.042066, 0.997861, 0.0500347, 0.642146, -0.0653683, 0.76379, -9.35084, 7.73788, 8.00161)
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_sn115")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3747, 3.7142, 9.24254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16579, 3.73444, 4.54561)
 player = NodePath("../PlayerActor")
