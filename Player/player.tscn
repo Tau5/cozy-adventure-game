@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmc52okbh8vtl"]
+[gd_scene load_steps=7 format=3 uid="uid://dmc52okbh8vtl"]
 
 [ext_resource type="Script" path="res://Player/PlayerActor.gd" id="1_1qddq"]
+[ext_resource type="Shader" path="res://Player/player_behind.gdshader" id="2_8b4jl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlncm"]
+render_priority = 1
+transparency = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxgoe"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_xlncm")
+shader = ExtResource("2_8b4jl")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_emnid"]
+material = SubResource("ShaderMaterial_lxgoe")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17k2h"]
 
