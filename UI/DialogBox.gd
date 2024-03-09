@@ -14,6 +14,10 @@ const default_delimiter = "|"
 
 signal dialog_finished
 
+@onready var layout = $NinePatchRect
+@onready var label = $NinePatchRect/NameLabel
+@onready var text_box = $NinePatchRect/TextBox
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
@@ -24,7 +28,7 @@ func _process(delta):
 		acum_time += delta
 		
 		if (acum_time > seconds_per_character and dialog_char_index < dialogs[curr_dialog_index].text.length()):
-			$TextBox.add_text(dialogs[curr_dialog_index].text[dialog_char_index])
+			text_box.add_text(dialogs[curr_dialog_index].text[dialog_char_index])
 			dialog_char_index += 1
 			acum_time = 0
 
@@ -33,11 +37,11 @@ func _input(event):
 		# if finished drawing the text
 		if dialog_char_index > dialogs[curr_dialog_index].text.length() - 1:
 			next_dialog()
-		else:
+		else:  
 			# skip all text 
-			dialog_char_index = dialogs[curr_dialog_index].text.length() - 1
-			$TextBox.clear()
-			$TextBox.add_text(dialogs[curr_dialog_index].text)
+			dialog_char_index = dialogs[curr_dialog_index].text.length()
+			text_box.clear()
+			text_box.add_text(dialogs[curr_dialog_index].text)
 
 func add_dialog(dialog_name: String, text: String, delimiter: String = default_delimiter):
 	for text_in_dialog in text.split(delimiter):
@@ -56,17 +60,17 @@ func next_dialog():
 	if (curr_dialog_index < dialogs.size() - 1):
 		curr_dialog_index += 1
 		dialog_char_index = 0
-		$TextBox.clear()
-		$NameLabel.set_text(dialogs[curr_dialog_index].name)
+		text_box.clear()
+		label.set_text(dialogs[curr_dialog_index].name)
 	else:
 		dialog_finished.emit()
 
 func play_dialog():
-	$NameLabel.set_text(dialogs[curr_dialog_index].name)
+	label.set_text(dialogs[curr_dialog_index].name)
 	show()
 	playing = true
 
 func stop_dialog():
 	hide()
-	$NameLabel.set_text("")
+	label.set_text("")
 	playing = false

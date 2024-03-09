@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dogb8twghd1m2"]
+
+[ext_resource type="Material" path="res://transparency-pass.tres" id="2_qis1k"]
+[ext_resource type="PackedScene" uid="uid://dmc52okbh8vtl" path="res://Player/player.tscn" id="3_66xvm"]
+[ext_resource type="PackedScene" path="res://Player/Camera.tscn" id="4_6k2ss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_am5s3"]
+size = Vector3(8.89166, 0.461395, 5.85657)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0s1pn"]
+material = ExtResource("2_qis1k")
+size = Vector3(6, 0.5, 6)
+
+[node name="Ejemplo" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45932, -0.00167489, 0.0740146)
+shape = SubResource("BoxShape3D_am5s3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2.15158, 0, 0, 0, 0.705279, 0, 0, 0, 1.71955, 0, 0, 0)
+mesh = SubResource("BoxMesh_0s1pn")
+
+[node name="PlayerActor" parent="." node_paths=PackedStringArray("view") instance=ExtResource("3_66xvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53505, 0)
+view = NodePath("../Camera")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.765427, -2.28115e-08, -0.643523, 0.042066, 0.997861, 0.0500347, 0.642146, -0.0653683, 0.76379, -9.35084, 7.73788, 8.00161)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_6k2ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3747, 3.7142, 9.24254)
+player = NodePath("../PlayerActor")

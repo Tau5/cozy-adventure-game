@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="CozyAdventureGame"
-run/main_scene="res://UI/DialogBox.tscn"
+run/main_scene="res://Test/dialog/dialog.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/midi/plugin.cfg")
 
 [input]
 
