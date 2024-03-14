@@ -4,7 +4,9 @@ extends Node
 
 var settings = {
 	"camera_invert_x": false,
-	"camera_invert_y": false
+	"camera_invert_y": false,
+	"camera_mouse_sensibility": 0.16,
+	"camera_joystick_sensibility": 0.16
 }
 
 func save_config():
