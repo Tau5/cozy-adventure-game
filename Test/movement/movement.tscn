@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dogb8twghd1m2"]
 
-[ext_resource type="Material" path="res://transparency-pass.tres" id="2_qis1k"]
+[ext_resource type="Material" uid="uid://e1t1cwl0hg0s" path="res://transparency-pass.tres" id="2_qis1k"]
 [ext_resource type="PackedScene" uid="uid://dmc52okbh8vtl" path="res://Player/player.tscn" id="3_66xvm"]
-[ext_resource type="PackedScene" path="res://Player/Camera.tscn" id="4_6k2ss"]
+[ext_resource type="PackedScene" uid="uid://cvquwmn7oorrx" path="res://Player/Camera.tscn" id="4_6k2ss"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_am5s3"]
 size = Vector3(8.89166, 0.461395, 5.85657)
