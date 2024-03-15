@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-signal coin_collected
+signal interact
 
 @export_subgroup("Components")
 @export var view: Node3D = self
@@ -117,6 +117,8 @@ func handle_controls(delta):
 			
 		if(jump_single): jump()
 
+	if Input.is_action_just_pressed("interact"):
+		interact.emit()
 # Handle gravity
 
 func handle_gravity(delta):

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbgt1wb131q2w"]
+
+[ext_resource type="PackedScene" uid="uid://c1c4kqyeey7q3" path="res://UI/DialogBox.tscn" id="2_3lxwx"]
+[ext_resource type="PackedScene" uid="uid://dn4xyo2m4wjju" path="res://UI/InteractIcon.tscn" id="3_845dn"]
+
+[node name="UI" type="Control" groups=["UI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" parent="." instance=ExtResource("2_3lxwx")]
+layout_mode = 1
+
+[node name="InteractIcon" parent="." groups=["UI"] instance=ExtResource("3_845dn")]
+layout_mode = 1
