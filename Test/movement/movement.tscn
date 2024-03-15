@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dogb8twghd1m2"]
+[gd_scene load_steps=8 format=3 uid="uid://dogb8twghd1m2"]
 
 [ext_resource type="Material" uid="uid://e1t1cwl0hg0s" path="res://transparency-pass.tres" id="2_qis1k"]
 [ext_resource type="PackedScene" uid="uid://dmc52okbh8vtl" path="res://Player/player.tscn" id="3_66xvm"]
 [ext_resource type="PackedScene" uid="uid://cvquwmn7oorrx" path="res://Player/Camera.tscn" id="4_6k2ss"]
+[ext_resource type="PackedScene" uid="uid://tjr121skkc45" path="res://Test/ExampleInteractableObject.tscn" id="4_rbr7k"]
+[ext_resource type="PackedScene" uid="uid://cbgt1wb131q2w" path="res://UI/ui.tscn" id="5_k05ao"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_am5s3"]
-size = Vector3(8.89166, 0.461395, 5.85657)
+size = Vector3(12.8903, 0.461395, 10.239)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0s1pn"]
 material = ExtResource("2_qis1k")
@@ -16,7 +18,7 @@ size = Vector3(6, 0.5, 6)
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45932, -0.00167489, 0.0740146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0738906, -0.00167489, 0.0951173)
 shape = SubResource("BoxShape3D_am5s3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -33,3 +35,8 @@ transform = Transform3D(0.765427, -2.28115e-08, -0.643523, 0.042066, 0.997861, 0
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_6k2ss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3747, 3.7142, 9.24254)
 player = NodePath("../PlayerActor")
+
+[node name="ExampleInteractableObject" parent="." instance=ExtResource("4_rbr7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50458, 1.32208, 0)
+
+[node name="UI" parent="." instance=ExtResource("5_k05ao")]
