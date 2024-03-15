@@ -18,8 +18,10 @@ func _physics_process(delta):
 	var direction_x = -1 if SM.settings.camera_invert_x else 1
 	var direction_y = -1 if SM.settings.camera_invert_y else 1
 
-	rot_x += Input.get_axis("camera_left", "camera_right") * ((2 * PI) * SM.settings.camera_joystick_sensibility) * delta * direction_x
-	rot_y += Input.get_axis("camera_up", "camera_down") * ((2 * PI) * SM.settings.camera_joystick_sensibility) * delta * direction_y
+	var rot_increment: Vector2
+	
+	rot_increment.x += Input.get_axis("camera_left", "camera_right") * ((2 * PI) * SM.settings.camera_joystick_sensibility) * delta * direction_x
+	rot_increment.y += Input.get_axis("camera_up", "camera_down") * ((2 * PI) * SM.settings.camera_joystick_sensibility) * delta * direction_y
 	
 	# Gamepad and mouse camera movement should be non-blocking so things like gyroscope control with Steam Input 
 	# (which binds gyroscope movement to a simulated mouse) or similar programs can work alongside 
@@ -28,12 +30,12 @@ func _physics_process(delta):
 	# NOTE: Input.get_last_mouse_velocity is relative to pixel movement, contrary to Input.get_axis
 	# maybe we should normalize sensibility based on screen size so if a user changes screen resolution, 
 	# the sensibility won't change
-	rot_x += Input.get_last_mouse_velocity().x / 1000 * ((2 * PI) * SM.settings.camera_mouse_sensibility) * delta * direction_x;
-	rot_y += Input.get_last_mouse_velocity().y / 1000 * ((2 * PI) * SM.settings.camera_mouse_sensibility) * delta * direction_y;
+	rot_increment.x += Input.get_last_mouse_velocity().x / 1000 * ((2 * PI) * SM.settings.camera_mouse_sensibility) * delta * direction_x;
+	rot_increment.y += Input.get_last_mouse_velocity().y / 1000 * ((2 * PI) * SM.settings.camera_mouse_sensibility) * delta * direction_y;
 
 	# Limit camera movement vertically to not go under player or past above them (It would just invert the camera)
-	if (rot_y > PI/2): rot_y = PI/2;
-	if (rot_y < 0): rot_y = 0;
+	if (rot_y + rot_increment.y < PI/2 and rot_y + rot_increment.y > 0): rot_y += rot_increment.y;
+	rot_x += rot_increment.x
 
 	# View explanation at https://github.com/Tau5/cozy-adventure-game/issues/2#issuecomment-1980363364
 	# Calculates position of camera based on distance to player so it orbits around de player
